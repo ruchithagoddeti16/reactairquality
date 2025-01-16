@@ -8,7 +8,7 @@ def process_data(data):
     
     features = [list(map(float, features))]
     
-    loaded_scaler = joblib.load('./models/scaler.pkl')
+    loaded_scaler = joblib.load('./backend/models/scaler.pkl')
 
     x_new_scaled = loaded_scaler.transform(features)
 
@@ -30,7 +30,7 @@ def process_features(sample):
  
 
 def make_predictions(inputSample):
-    with open('./models/AirQuality.pkl', 'rb') as file:
+    with open('./backend/models/AirQuality.pkl', 'rb') as file:
         loaded_model = joblib.load(file)
 
     print(inputSample)
