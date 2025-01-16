@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify, send_from_directory #render_template
 import os
 from flask_cors import CORS
-from preprocess import process_data, process_features, make_predictions
+from backend.preprocess import process_data, process_features, make_predictions
 
-app = Flask(__name__, static_folder='./frontend/dist')
+app = Flask(__name__, static_folder='./backend/frontend/dist')
 CORS(app)
 
 @app.route('/')
